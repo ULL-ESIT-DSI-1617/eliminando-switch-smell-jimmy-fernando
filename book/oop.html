@@ -1,0 +1,352 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Programación orientada a objetos · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="oop.html">
+            
+                <a href="oop.html">
+            
+                    
+                    Programación orientada a objetos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Programación orientada a objetos</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="programaci&#xF3;n-orientada-a-objetos-en-javascript">Programaci&#xF3;n orientada a objetos en Javascript</h1>
+<h2 id="&#xBF;qu&#xE9;-es-un-objeto">&#xBF;Qu&#xE9; es un objeto?</h2>
+<p>Un objeto es una &quot;c&#xE1;scara dura&quot; que esconde la complejidad en su interior y nos ofrece una interfaz con m&#xE9;todos y funciones para que el objeto pueda ser usado.</p>
+<h2 id="&#xBF;qu&#xE9;-es-un-m&#xE9;todo">&#xBF;Qu&#xE9; es un m&#xE9;todo?</h2>
+<p>Son propiedades simples que poseen valores de funciones. Por ejemplo:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> rabbit = {};
+rabbit.speak = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">line</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The rabbit says &apos;&quot;</span> + line + <span class="hljs-string">&quot;&apos;&quot;</span>);
+};
+
+rabbit.speak(<span class="hljs-string">&quot;I&apos;m alive.&quot;</span>);
+<span class="hljs-comment">// &#x2192; The rabbit says &apos;I&apos;m alive.&apos;</span>
+</code></pre>
+<p>Los m&#xE9;todos tienen una variable llamada <code>this</code> que apunta hacia el objeto que lo ha llamado.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">speak</span>(<span class="hljs-params">line</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The &quot;</span> + <span class="hljs-keyword">this</span>.type + <span class="hljs-string">&quot; rabbit says &apos;&quot;</span> +
+              line + <span class="hljs-string">&quot;&apos;&quot;</span>);
+}
+<span class="hljs-keyword">var</span> whiteRabbit = {type: <span class="hljs-string">&quot;white&quot;</span>, speak: speak};
+<span class="hljs-keyword">var</span> fatRabbit = {type: <span class="hljs-string">&quot;fat&quot;</span>, speak: speak};
+
+whiteRabbit.speak(<span class="hljs-string">&quot;Oh my ears and whiskers, &quot;</span> +
+                  <span class="hljs-string">&quot;how late it&apos;s getting!&quot;</span>);
+<span class="hljs-comment">// &#x2192; The white rabbit says &apos;Oh my ears and whiskers, how</span>
+<span class="hljs-comment">//   late it&apos;s getting!&apos;</span>
+fatRabbit.speak(<span class="hljs-string">&quot;I could sure use a carrot right now.&quot;</span>);
+<span class="hljs-comment">// &#x2192; The fat rabbit says &apos;I could sure use a carrot</span>
+<span class="hljs-comment">//   right now.&apos;</span>
+</code></pre>
+<p>Este c&#xF3;digo utiliza la variable <code>this</code> para saber qu&#xE9; conejo est&#xE1; hablando, pues cada vez que imprime la cadena de texto, tambi&#xE9;n imprime el &quot;tipo&quot; (la variable <code>type</code> del objeto) mediante <code>this</code>.</p>
+<hr>
+<h3 id="prototipos">Prototipos</h3>
+<p>Por otro lado, tenemos los <strong>prototipos</strong>, que son otros objetos que sirven como &quot;padres&quot; de otros, de tal forma que hay una herencia impl&#xED;cita. Para obtener el prototipo de un objeto, tenemos el m&#xE9;todo <code>getPrototypeOf()</code></p>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf({}) ==
+            <span class="hljs-built_in">Object</span>.prototype);
+<span class="hljs-comment">// &#x2192; true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(<span class="hljs-built_in">Object</span>.prototype));
+<span class="hljs-comment">// &#x2192; null</span>
+</code></pre>
+<hr>
+<h3 id="constructores">Constructores</h3>
+<p>Un constructor es un m&#xE9;todo que se encarga de crear el objeto de una forma personalizada, asignando determinados valores dados a variables, etc. En Javascript, llamar a un m&#xE9;todo con la palabra reservada <code>new</code> a su lado hace que dicho m&#xE9;todo se trate como un constructor. El constructor usar&#xE1; la variable <code>this</code> para inicializar sus &quot;atributos&quot;, por ejemplo:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Rabbit</span>(<span class="hljs-params">type</span>) </span>{
+  <span class="hljs-keyword">this</span>.type = type;
+}
+
+<span class="hljs-keyword">var</span> killerRabbit = <span class="hljs-keyword">new</span> Rabbit(<span class="hljs-string">&quot;killer&quot;</span>);
+<span class="hljs-keyword">var</span> blackRabbit = <span class="hljs-keyword">new</span> Rabbit(<span class="hljs-string">&quot;black&quot;</span>);
+<span class="hljs-built_in">console</span>.log(blackRabbit.type);
+<span class="hljs-comment">// &#x2192; black</span>
+</code></pre>
+<p>Es una buena pr&#xE1;ctica que el nombre del constructor use may&#xFA;sculas, y los objetos creados con <code>new</code> son llamados <strong>instancias</strong> del constructor. Estas instancias tienen una propiedad llamada &quot;prototipo&quot; que se puede usar para a&#xF1;adir m&#xE1;s m&#xE9;todos al objeto creado con el constructor.</p>
+<pre><code class="lang-js">Rabbit.prototype.speak = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">line</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The &quot;</span> + <span class="hljs-keyword">this</span>.type + <span class="hljs-string">&quot; rabbit says &apos;&quot;</span> +
+              line + <span class="hljs-string">&quot;&apos;&quot;</span>);
+};
+blackRabbit.speak(<span class="hljs-string">&quot;Doom...&quot;</span>);
+<span class="hljs-comment">// &#x2192; The black rabbit says &apos;Doom...&apos;</span>
+</code></pre>
+<hr>
+<h3 id="interferencia-de-prototipos">Interferencia de prototipos</h3>
+<p>Un prototipo puede ser usado en cualquier momento para a&#xF1;adir nuevas propiedades y m&#xE9;todos a todos los objetos basados en &#xE9;l. Por ejemplo, si queremos que nuestros conejos bailen:</p>
+<pre><code class="lang-js">Rabbit.prototype.dance = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The &quot;</span> + <span class="hljs-keyword">this</span>.type + <span class="hljs-string">&quot; rabbit dances a jig.&quot;</span>);
+};
+killerRabbit.dance();
+<span class="hljs-comment">// &#x2192; The killer rabbit dances a jig.</span>
+</code></pre>
+<p>Tambi&#xE9;n podemos crear objetos sin prototipos, de la siguiente forma:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> map = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+map[<span class="hljs-string">&quot;pizza&quot;</span>] = <span class="hljs-number">0.069</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;toString&quot;</span> <span class="hljs-keyword">in</span> map);
+<span class="hljs-comment">// &#x2192; false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;pizza&quot;</span> <span class="hljs-keyword">in</span> map);
+<span class="hljs-comment">// &#x2192; true</span>
+</code></pre>
+<p>El <code>null</code> que pasamos como par&#xE1;metro al m&#xE9;todo <code>create()</code> indica el prototipo concreto que queremos que tenga el objeto.</p>
+<hr>
+<h3 id="getters-y-setters">Getters y setters</h3>
+<p>Los m&#xE9;todos llamados getters y setters son formas de obtener y asignar valores a propiedades del objeto, respetando la interfaz.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> pile = {
+  elements: [<span class="hljs-string">&quot;eggshell&quot;</span>, <span class="hljs-string">&quot;orange peel&quot;</span>, <span class="hljs-string">&quot;worm&quot;</span>],
+  get height() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.elements.length;
+  },
+  set height(value) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Ignoring attempt to set height to&quot;</span>, value);
+  }
+};
+
+<span class="hljs-built_in">console</span>.log(pile.height);
+<span class="hljs-comment">// &#x2192; 3</span>
+pile.height = <span class="hljs-number">100</span>;
+<span class="hljs-comment">// &#x2192; Ignoring attempt to set height to 100</span>
+</code></pre>
+<p>De esta forma, dependiendo de si usamos una asignaci&#xF3;n o no con un atributo del objeto, se llamar&#xE1; al m&#xE9;todo <em>getter</em> o <em>setter</em>. Esto tambi&#xE9;n lo indican las palabras reservadas <code>set</code> y <code>get</code> que ponemos delante del nombre del m&#xE9;todo, que se encargar&#xE1;n de ejecutar un m&#xE9;todo u otro dependiendo de si la propiedad es le&#xED;da o modificada.</p>
+<h2 id="herencia">Herencia</h2>
+<p>La herencia define una jerarqu&#xED;a en un conjunto de clases, lo que permite que las clases hijas puedan heredar m&#xE9;todos y variables de las clases padre, pero no al rev&#xE9;s. Tomando como ejemplo nuestra pr&#xE1;ctica, donde hemos tenido que usar herencia, se definir&#xED;a de la siguiente manera:</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Temperatura</span>  <span class="hljs-keyword">extends</span> <span class="hljs-title">Medida</span> </span>{
+    <span class="hljs-keyword">constructor</span>(val, type){
+      ...
+    }
+  }
+</code></pre>
+<h2 id="m&#xE9;todo-instanceof">M&#xE9;todo instanceof()</h2>
+<p>En ocasiones, es &#xFA;til saber de qu&#xE9; constructor proviene un objeto determinado. Para ello, Javascript posee un m&#xE9;todo llamado <code>instanceof()</code></p>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> RTextCell(<span class="hljs-string">&quot;A&quot;</span>) <span class="hljs-keyword">instanceof</span> RTextCell);
+<span class="hljs-comment">// &#x2192; true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> RTextCell(<span class="hljs-string">&quot;A&quot;</span>) <span class="hljs-keyword">instanceof</span> TextCell);
+<span class="hljs-comment">// &#x2192; true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> TextCell(<span class="hljs-string">&quot;A&quot;</span>) <span class="hljs-keyword">instanceof</span> RTextCell);
+<span class="hljs-comment">// &#x2192; false</span>
+<span class="hljs-built_in">console</span>.log([<span class="hljs-number">1</span>] <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>);
+<span class="hljs-comment">// &#x2192; true</span>
+</code></pre>
+<p>Este m&#xE9;todo comprueba el &#xE1;rbol de herencia, y si el atributo <code>prototype</code> del objeto deriva del atributo <code>prototype</code> de la clase, entonces el m&#xE9;todo devuelve <em>true</em>. Este m&#xE9;todo puede ser usado en las clases convencionales como por ejemplo <code>Array</code>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Introducción">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Programación orientada a objetos","level":"1.2","depth":1,"previous":{"title":"Introducción","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"oop.md","mtime":"2017-03-26T15:00:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-26T15:26:30.258Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
