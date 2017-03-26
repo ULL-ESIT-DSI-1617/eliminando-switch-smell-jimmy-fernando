@@ -26,8 +26,8 @@ app.use(session({
     saveUninitialized: true
 }));
 
-//Para servir los archivos de CSS.
-app.use(express.static('public'));
+//Para servir los archivos de CSS y JS.
+app.use(express.static('.'));
 
 app.get('/', (req, res)=>{
   res.sendFile(path.join(__dirname+'/index.html'));
