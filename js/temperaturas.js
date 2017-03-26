@@ -31,11 +31,11 @@ class Celsius extends Temperatura {
         super(val, 'Celsius')
     }
     to_fahrenheit(){
-        return ( (this.value * 9/5)+32 ) + ' Fahrenheit';
+        return ( (this.value * 9/5)+32 ).toFixed(2) + ' Fahrenheit';
 
     }
     to_kelvin(){
-        return (this.value + 273.15) + ' Kelvin';
+        return (this.value + 273.15).toFixed(2) + ' Kelvin';
     }
 }
 class Fahrenheit extends Temperatura {
@@ -43,10 +43,10 @@ class Fahrenheit extends Temperatura {
         super(val, 'F')
     }
     to_kelvin(){
-        return ((this.value + 459.67) * 5/9) + ' Kelvin';
+        return ((this.value + 459.67) * 5/9).toFixed(2) + ' Kelvin';
     }
     to_celsius(){
-        return ( (this.value -32 )*5/9) + ' Celsius';
+        return ( (this.value -32 )*5/9).toFixed(2) + ' Celsius';
     }
 }
 class Kelvin extends Temperatura {
@@ -54,11 +54,9 @@ class Kelvin extends Temperatura {
         super(val, 'K')
     }
     to_celsius(){
-        return (this.value - 273.15) + ' Celsius';
+        return (this.value - 273.15).toFixed(2) + ' Celsius';
     }
     to_fahrenheit(){
-        return ((this.value * 9/5)- 459.67) + ' Fahrenheit';
+        return ((this.value * 9/5)- 459.67).toFixed(2) + ' Fahrenheit';
     }
 }
-var prueba = new Celsius('-108');
-console.log(prueba.to_fahrenheit());
