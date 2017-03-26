@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+header.mean {
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #444;
+    color: #fff;
+}
+.mean h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.mean h2 {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: normal;
+}
+.container {
+    margin: 0 auto;
+    min-width: 200px;
+    width: 50%;
+}
+#temp-form {
+    padding: 20px 0px;
+}
+input#temperatura {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #DADADA;
+    padding-left: 5px;
+    font-size: 25px;
+    color: #333;
+    margin-top: 10px;
+}
+#convertir {
+    margin: 10px auto;
+    display: block;
+    padding: 10px 20px;
+    border: 0px;
+    background-color: #9D1717;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+
+}
+#result {
+    height: 40px;
+    background-color: teal;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Conversor de Temperaturas</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header class="mean">
+            <h1>Conversor de Temperaturas</h1>
+            <h2>Celsius, Fahrenheit, Kelvin</h2>
+        </header>
+        <div class="container">
+            <form id="temp-form">
+                <label for="">Introduce la Temperatura</label>
+                <input type="text" placeholder="35F to C, 35C K" id="temperatura">
+                <input type="submit" value="CONVERTIR" id="convertir">
+            </form>
+            <p>Temperatura convertida</p>
+            <div id="result">
+            </div>
+        </div>
+        <script
+			  src="https://code.jquery.com/jquery-1.12.4.min.js"
+			  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+			  crossorigin="anonymous"></script>
+        <script src="js/temperaturas.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
