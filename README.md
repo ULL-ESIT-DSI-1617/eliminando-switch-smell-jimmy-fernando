@@ -1,6 +1,6 @@
-# Práctica 6: Conversor de temperaturas usando OOP en Javascript
+# Práctica 7: Eliminando Switch Smell
 
-Este repositorio aloja la práctica del conversor de temperaturas para la asignatura de **Desarrollo de Sistemas Informáticos**.
+Este repositorio aloja la práctica **Eliminando Switch Smell** para la asignatura **Desarrollo de Sistemas Informáticos**. En esta practica eliminamos las sentencias `switch`, siguiendo la filosofía de la programación orientada a objetos, de la práctica anterior [Práctica 6: Conversor de temperaturas usando OOP en Javascript](https://github.com/ULL-ESIT-DSI-1617/programacion-orientada-a-objetos-y-herencia-en-javascript-jimmy-fernando)
 
 ### Cómo usar la práctica
 Para mostrar el conversor, se ha de acceder a la raíz del servidor una vez inicializado este:
@@ -19,7 +19,7 @@ o bien
 ```
 https://conversor-js.herokuapp.com/login
 ```
-Una vez logueados, se nos redirigirá automáticamente al libro de apuntes. Para cerrar sesión, accedmos a la ruta `/logout`:
+Una vez logueados, se nos redirigirá automáticamente al libro de apuntes. Para cerrar sesión, accedemos a la ruta `/logout`:
 ```
 http://localhost:8080/logout
 ```
