@@ -51,3 +51,21 @@ class Kelvin extends Temperatura {
         return new Fahrenheit((this.value * 9/5)- 459.67);
     }
 }
+
+(function(){
+    measures = {
+        'K': {
+            name: 'Kelvin'
+        },
+        'F': {
+            name: 'Fahrenheit'
+        },
+        'C': {
+            name: 'Celsius'
+        }
+    }
+    measures['K'] = Kelvin;
+    measures['F'] = Fahrenheit;
+    measures['C'] = Celsius;
+
+})()

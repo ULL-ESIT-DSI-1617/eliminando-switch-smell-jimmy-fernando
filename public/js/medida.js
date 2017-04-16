@@ -30,21 +30,3 @@ class Medida {
     }
 
 }
-
-(function(){
-    measures = {
-        'K': {
-            name: 'Kelvin'
-        },
-        'F': {
-            name: 'Fahrenheit'
-        },
-        'C': {
-            name: 'Celsius'
-        }
-    }
-    measures['K'] = Kelvin;
-    measures['F'] = Fahrenheit;
-    measures['C'] = Celsius;
-
-})()
