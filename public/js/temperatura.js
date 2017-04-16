@@ -1,5 +1,3 @@
-//var Medida = require('./medida.js');
-
 
 class Temperatura  extends Medida {
     constructor(val, type){
@@ -18,10 +16,10 @@ class Temperatura  extends Medida {
 }
 class Celsius extends Temperatura {
     constructor(val){
-        super(val, 'Celsius')
+        super(val, measures['C'].name)
     }
     toFahrenheit(){
-        return new Fahrenheit(this.value * 9/5)+32;
+        return new Fahrenheit(this.value * 9/5 +32);
 
     }
     toKelvin(){
@@ -30,7 +28,7 @@ class Celsius extends Temperatura {
 }
 class Fahrenheit extends Temperatura {
     constructor(val){
-        super(val, 'Fahrenheit')
+        super(val, measures['F'].name)
     }
     toKelvin(){
         return new Kelvin((this.value + 459.67) * 5/9);
@@ -42,7 +40,7 @@ class Fahrenheit extends Temperatura {
 class Kelvin extends Temperatura {
 
     constructor(val){
-        super(val, 'Kelvin')
+        super(val, measures['K'].name)
     }
     toCelsius(){
         return new Celsius(this.value - 273.15);

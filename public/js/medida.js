@@ -1,10 +1,20 @@
 'use strict'
-const REGEXP = /([-+]?\d+(?:\.\d*)?)\s*([fFcCkK])\s*(to)?\s*([fFcCkK])/;
+const MEASURE = /([-+]?\d+(?:\.\d*)?)\s*([fFcCkK])/;
+const REGEXP = new RegExp(MEASURE.source + /\s*(to)?\s*([fFcCkK])/.source);
 var measures;
 
 
 class Medida {
     constructor(val, type) {
+        if(!type){
+            var tmp = val.match(MEASURE);
+            if (tmp) {
+                val = Number(tmp[1]);
+                type = measures[tmp[2].toUpperCase()].name;
+            }else {
+                throw 'Formado no válido';
+            }
+        }
         this.value = val;
         this.type = type;
     }
@@ -25,7 +35,7 @@ class Medida {
             return res.toString();
 
         }else {
-            console.log('error');
+            throw 'Formado no válido';
         }
     }
 
