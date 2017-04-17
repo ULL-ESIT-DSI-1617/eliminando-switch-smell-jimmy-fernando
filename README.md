@@ -7,26 +7,19 @@ Para mostrar el conversor, se ha de acceder a la raíz del servidor una vez inic
 ```
 http://localhost:8080
 ```
-Por otro lado, si lo abrimos con Heroku:
-```
-https://conversor-js.herokuapp.com/
-```
+
 Para acceder al login, debemos ir a la ruta `/login`:
+
 ```
 http://localhost:8080/login
 ```
-o bien
-```
-https://conversor-js.herokuapp.com/login
-```
+
 Una vez logueados, se nos redirigirá automáticamente al libro de apuntes. Para cerrar sesión, accedemos a la ruta `/logout`:
+
 ```
 http://localhost:8080/logout
 ```
-o bien
-```
-https://conversor-js.herokuapp.com/logout
-```
+
 ---
 
 ### Miembros del equipo
@@ -39,6 +32,4 @@ https://conversor-js.herokuapp.com/logout
 
 [Campus virtual de la asignatura](https://campusvirtual.ull.es/1617/course/view.php?id=1136)
 
-[Práctica desplegada en Heroku](https://conversor-js.herokuapp.com/)
-
-[Práctica deslegada en Gh-Pages](https://ULL-ESIT-DSI-1617.github.io/programacion-orientada-a-objetos-y-herencia-en-javascript-jimmy-fernando)
+[Práctica desplegada en Gh-Pages](https://ull-esit-dsi-1617.github.io/eliminando-switch-smell-jimmy-fernando/)
